@@ -1,14 +1,15 @@
-let board = document.querySelector('.board')
-board.style.gridTemplateColumns = 'repeat(16, 1fr)'
-board.style.gridTemplateRows = 'repeat(16, 1fr)'
+function board(userInput) {
+    let board = document.querySelector('.board')
+    board.style.gridTemplateColumns = `repeat(${userInput}, 1fr)`
+    board.style.gridTemplateRows = `repeat(${userInput}, 1fr)`
 
-for (let i = 0; i < 256; i++) {
-    let square = document.createElement('div')
-    square.classList.add('cell')
-    square.style.backgroundColor = 'white'
-    board.insertAdjacentElement('beforeend', square)
+    for (let i = 0; i < `${userInput}` * `${userInput}`; i++) {
+        let square = document.createElement('div')
+        square.classList.add('cell')
+        square.style.backgroundColor = 'white'
+        board.insertAdjacentElement('beforeend', square)
+    }
 }
-
 
 // New size-------------------------------------------------------------------------------
 let newSize = document.querySelector('.size')
@@ -19,7 +20,7 @@ function userSize() {
     let userInput = prompt("Please enter a new size number: ", "min: 2, max: 100")
     if (!isNaN(userInput)) {
         if (userInput >= 2 && userInput <= 100) {
-            alert("Work in progress")
+            board(userInput)
         } else {
             alert("Please pick a number between 2 and 100")
             userSize()
@@ -29,6 +30,7 @@ function userSize() {
         userSize()
     }
 }
+console.log(userSize())
 //----------------------------------------------------------------------------
 
 // Black button color--------------------------------------

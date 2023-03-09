@@ -1,5 +1,21 @@
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.content {
+    display: grid;
+    justify-content: center;
+}
+
 .board {
     width: 500px;
     height: 500px;
     display: grid;
+    border: solid black;
 }
+

@@ -1,3 +1,4 @@
+// Grid creation
 function board(userInput) {
     let board = document.querySelector('.board')
     board.style.gridTemplateColumns = `repeat(${userInput}, 1fr)`
@@ -48,11 +49,11 @@ function blackColorButton() {
 console.log(blackColorButton())
 // -----------------------------------------------------------
 
-// White button color -------------------------------------
-function whiteColorButton() {
-    const whiteColorBtn = document.querySelector('.white')
+// Eraser button -------------------------------------
+function eraserButton() {
+    const eraserBtn = document.querySelector('.eraser')
     let squares = document.querySelectorAll('.cell')
-    whiteColorBtn.addEventListener('click', () => {
+    eraserBtn.addEventListener('click', () => {
         squares.forEach((cell) => {
             cell.addEventListener('mouseover', () => {
                 cell.style.backgroundColor = 'white'
@@ -60,14 +61,13 @@ function whiteColorButton() {
         })
     })
 }
-console.log(whiteColorButton())
+console.log(eraserButton())
 // -------------------------------------------------------------
 
 // Random color ----------------------------------------------------
 function randomColor() {
     const randomBtn = document.querySelector('.random')
     let squares = document.querySelectorAll('.cell')
-    let random = Math.floor(Math.random() * 16777215).toString(16)
     randomBtn.addEventListener('click', () => {
         squares.forEach((cell) => {
             cell.addEventListener('mouseover', () => {
@@ -91,4 +91,3 @@ function resetButton() {
 }
 console.log(resetButton())
 // -------------------------------------------------------
-

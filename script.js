@@ -9,19 +9,27 @@ for (let i = 0; i < 256; i++) {
     board.insertAdjacentElement('beforeend', square)
 }
 
-function userSize(input) {
-    let newSize = document.querySelector('.size')
-    newSize.addEventListener('click', () => {
-        prompt("Please enter a new size: (min: 2, max: 100)")
-        if (input >= 2 && input <= 100) {
-            alert("yes")
+
+// New size-------------------------------------------------------------------------------
+let newSize = document.querySelector('.size')
+newSize.addEventListener('click', () => {
+    userSize()
+})
+function userSize() {
+    let userInput = prompt("Please enter a new size number: ", "min: 2, max: 100")
+    if (!isNaN(userInput)) {
+        if (userInput >= 2 && userInput <= 100) {
+            alert("Work in progress")
         } else {
             alert("Please pick a number between 2 and 100")
+            userSize()
         }
-    })
+    } else {
+        alert("Error")
+        userSize()
+    }
 }
-
-console.log(userSize())
+//----------------------------------------------------------------------------
 
 // Black button color--------------------------------------
 function blackColorButton() {

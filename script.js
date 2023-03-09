@@ -4,18 +4,19 @@ board.style.gridTemplateRows = 'repeat(16, 1fr)'
 
 for (let i = 0; i < 256; i++) {
     let square = document.createElement('div')
-    square.style.backgroundColor = 'white'
+    square.classList.add('cell')
+    square.style.backgroundColor = 'grey'
     board.insertAdjacentElement('beforeend', square)
 }
 
 // Black button color
 function blackColorButton() {
     const blackColorBtn = document.querySelector('.black')
-    let squares = document.querySelectorAll('div')
+    let squares = document.querySelectorAll('.cell')
     blackColorBtn.addEventListener('click', () => {
-        squares.forEach((div) => {
-            div.addEventListener('mouseover', () => {
-                div.style.backgroundColor = 'black'
+        squares.forEach((cell) => {
+            cell.addEventListener('mouseover', () => {
+                cell.style.backgroundColor = 'black'
             })
         })
     })
@@ -26,11 +27,11 @@ console.log(blackColorButton())
 // White button color -------------------------------------
 function whiteColorButton() {
     const whiteColorBtn = document.querySelector('.white')
-    let squares = document.querySelectorAll('div')
+    let squares = document.querySelectorAll('.cell')
     whiteColorBtn.addEventListener('click', () => {
-        squares.forEach((div) => {
-            div.addEventListener('mouseover', () => {
-                div.style.backgroundColor = 'white'
+        squares.forEach((cell) => {
+            cell.addEventListener('mouseover', () => {
+                cell.style.backgroundColor = 'white'
             })
         })
     })
